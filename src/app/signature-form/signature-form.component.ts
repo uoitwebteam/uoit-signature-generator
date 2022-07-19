@@ -68,7 +68,7 @@ export class SignatureFormComponent implements OnInit {
     private directory: DirectoryService,
     private completer: CompleterService,
     private uploader: UploaderService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.buildForm();
@@ -88,7 +88,7 @@ export class SignatureFormComponent implements OnInit {
       name: this.fb.group({
         first: ['', Validators.required],
         last: ['', Validators.required],
-        pronouns:''
+        pronouns: ''
       }),
       contact: this.fb.group({
         phone: ['905.721.8668', Validators.required],
@@ -111,7 +111,8 @@ export class SignatureFormComponent implements OnInit {
           this.initSocial({ type: 'tw', username: 'ontariotech_u' }),
           this.initSocial({ type: 'li', username: 'ontariotech', account: 'school' }),
           this.initSocial({ type: 'yt', username: 'ontariotech', account: 'c' }),
-          this.initSocial({ type: 'in', username: 'ontariotechu' })
+          this.initSocial({ type: 'in', username: 'ontariotechu' }),
+          this.initSocial({ type: 'ti', username: 'ontariotechu' })
         ])
       }),
       logo: this.brandLogos[0].options[0],
