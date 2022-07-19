@@ -80,11 +80,11 @@
     <tr>
       <td *ngFor="let network of data.social?.networks;" style="padding: 0; padding-right: 4px;">
         <a style="border: 0; outline: none;"
-          title="{{ [network.type.cta, (network.type.value === 'tw' || network.type.value === 'in') ? '@' + network.username : network.username, 'on', network.type.name].join(' ') }}"
+          title="{{ [network.type.cta, (network.type.value === 'tw' || network.type.value === 'in' || network.type.value === 'ti') ? '@' + network.username : network.username, 'on', network.type.name].join(' ') }}"
           [href]="network.type.href + (network.account ? network.account.value + '/' : '') + (network.username || network.type.default)"
           *ngIf="network.type">
           <img [src]="network.type.src | absoluteUrl" alt="{{ network.type.name }} icon" width="28" height="28"
-            style="border: 0; width: 28px; height: 28px;" />
+            style="border: 0; width: 28px; height: auto;" />
         </a>
       </td>
     </tr>
@@ -209,7 +209,9 @@
                 </td>
 
                 <td valign="top" *ngIf="data.message?.acknowledgement">
-                  We acknowledge the lands and people of the Mississaugas of Scugog Island First Nation which is covered under the Williams Treaties. We are situated on the Traditional Territory of the Mississaugas, a branch of the greater Anishinaabeg Nation which includes Algonquin, Ojibway, Odawa and Pottawatomi.
+                  We acknowledge the lands and people of the Mississaugas of Scugog Island First Nation which is covered
+                  under the Williams Treaties. We are situated on the Traditional Territory of the Mississaugas, a
+                  branch of the greater Anishinaabeg Nation which includes Algonquin, Ojibway, Odawa and Pottawatomi.
                 </td>
               </tr>
             </tbody>

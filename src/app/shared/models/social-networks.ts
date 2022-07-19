@@ -47,14 +47,14 @@ export const SocialNetworks: SocialNetwork[] = [
     href: 'https://facebook.com/',
     cta: 'Like',
     value: 'fb',
-    src: 'assets/social_icons/socialicon_facebook.gif'
+    src: 'assets/social_icons/socialicon_facebook_2022.png'
   },
   {
     name: 'Twitter',
     href: 'https://twitter.com/',
     cta: 'Follow',
     value: 'tw',
-    src: 'assets/social_icons/socialicon_twitter.gif'
+    src: 'assets/social_icons/socialicon_twitter_2022.png'
   },
   {
     name: 'YouTube',
@@ -75,7 +75,7 @@ export const SocialNetworks: SocialNetwork[] = [
       }
     ],
     value: 'yt',
-    src: 'assets/social_icons/socialicon_youtube.gif'
+    src: 'assets/social_icons/socialicon_youtube_2022.png'
   },
   {
     name: 'LinkedIn',
@@ -100,14 +100,21 @@ export const SocialNetworks: SocialNetwork[] = [
       }
     ],
     value: 'li',
-    src: 'assets/social_icons/socialicon_linkedin.gif'
+    src: 'assets/social_icons/socialicon_linkedin_2022.png'
   },
   {
     name: 'Instagram',
     href: 'https://instagram.com/',
     cta: 'Follow',
     value: 'in',
-    src: 'assets/social_icons/socialicon_instagram.gif'
+    src: 'assets/social_icons/socialicon_instagram_2022.png'
+  },
+  {
+    name: 'TikTok',
+    href: 'https://tiktok.com/@',
+    cta: 'Follow',
+    value: 'ti',
+    src: 'assets/social_icons/socialicon_tiktok_2022.png'
   }
 ];
 

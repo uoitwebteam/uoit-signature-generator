@@ -183,6 +183,8 @@
                 <div class="input-group">
                   <span class="input-group-label"
                     [hidden]="formData.value.social.networks[i].type?.value !== 'tw'">@</span>
+                  <span class="input-group-label"
+                    [hidden]="formData.value.social.networks[i].type?.value !== 'ti'">@</span>
                   <input type="text" class="input-group-field" formControlName="username">
                 </div>
                 <span class="form-error"
@@ -379,7 +381,9 @@
             <input type="checkbox" formControlName="acknowledgement">
           </label>
           <small *ngIf="formData.value.message.acknowledgement">
-            "We acknowledge the lands and people of the Mississaugas of Scugog Island First Nation which is covered under the Williams Treaties. We are situated on the Traditional Territory of the Mississaugas, a branch of the greater Anishinaabeg Nation which includes Algonquin, Ojibway, Odawa and Pottawatomi."
+            "We acknowledge the lands and people of the Mississaugas of Scugog Island First Nation which is covered
+            under the Williams Treaties. We are situated on the Traditional Territory of the Mississaugas, a branch of
+            the greater Anishinaabeg Nation which includes Algonquin, Ojibway, Odawa and Pottawatomi."
           </small>
         </div>
       </div>
