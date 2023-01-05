@@ -18,13 +18,13 @@ export const BrandLogos: FormControlOptGroup[] = [
       {
         name: 'Ontario Tech University and DC',
         value: 'otdc',
-        src: 'assets/logos/ot-dc.png',
+        src: 'https://brand.ontariotechu.ca/apps/assets/logos/ot-dc.png',
         href: 'https://ontariotechu.ca'
       },
       {
         name: 'Ontario Tech University and Brilliant Catalyst',
         value: 'otbc',
-        src: 'assets/logos/brilliant-catalyst.jpg',
+        src: 'https://brand.ontariotechu.ca/apps/assets/logos/brilliant-catalyst.jpg',
         href: 'https://ontariotechu.ca'
       }
     ]
@@ -35,7 +35,7 @@ export const BrandLogos: FormControlOptGroup[] = [
       {
         name: 'Ontario Tech University Ridgebacks',
         value: 'spirit',
-        src: 'assets/logos/ridgebacks.png',
+        src: 'https://brand.ontariotechu.ca/apps/assets/logos/ridgebacks.png',
         href: 'https://ontariotechu.ca'
       }
     ]
@@ -46,7 +46,7 @@ export const BrandLogos: FormControlOptGroup[] = [
       {
         name: 'Pi Day',
         value: 'piday',
-        src: 'assets/logos/piday.jpg',
+        src: 'https://brand.ontariotechu.ca/apps/assets/logos/piday.jpg',
         href: 'https://ontariotechu.ca/piday'
       }
     ]
