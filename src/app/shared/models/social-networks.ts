@@ -50,11 +50,12 @@ export const SocialNetworks: SocialNetwork[] = [
     src: 'https://brand.ontariotechu.ca/apps/assets/social_icons/socialicon_facebook_2022.png'
   },
   {
-    name: 'Twitter',
+    // name: '𝕏',
+    name: 'X',
     href: 'https://twitter.com/',
     cta: 'Follow',
     value: 'tw',
-    src: 'https://brand.ontariotechu.ca/apps/assets/social_icons/socialicon_twitter_2022.png'
+    src: 'https://brand.ontariotechu.ca/apps/assets/social_icons/socialicon_twitter_x.png'
   },
   {
     name: 'YouTube',

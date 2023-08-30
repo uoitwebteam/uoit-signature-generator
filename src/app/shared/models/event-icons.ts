@@ -38,7 +38,12 @@ export const EventIcons: FormControlOption[] = [
   },
   {
     value: 'uoitbook',
-    name: 'UOIT book',
+    name: 'OT book',
     src: 'https://brand.ontariotechu.ca/apps/assets/event_icons/uoitbook_64x64.jpg'
+  },
+  {
+    value: 'anniversary',
+    name: '20th anniversary',
+    src: 'https://brand.ontariotechu.ca/apps/assets/event_icons/anniversary_64.png'
   }
 ];
