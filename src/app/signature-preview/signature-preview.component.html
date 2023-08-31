@@ -75,6 +75,51 @@
     </tr>
   </table>
 
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.event.use && data.event.data?.icon.name=='20th anniversary'" style="padding: 0;">
+    <tbody>
+      <tr>
+        <td width="210" valign="middle">
+          <table>
+            <tr>
+              <td [width]="data.event.data?.size == 1 ? 36 : 24" valign="middle">
+                <img align="none" [src]="data.event.data?.icon.src | absoluteUrl"
+                  [width]="data.event.data?.size == 1 ? 36 : 24" [height]="data.event.data?.size == 1 ? 36 : 24">
+              </td>
+              <td valign="middle" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+
+                <a
+                  *ngIf="data.event.data?.icon.name!='20th anniversary'" 
+                  [href]="data.event.data?.url"
+                  style="word-wrap: break-word; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #0077ca; font-weight: normal; text-decoration: none;"
+                  title="Visit the {{data.event.data?.name }} webpage">
+                  <strong>{{data.event.data?.name }}</strong>
+                </a>
+
+                <a
+                  *ngIf="data.event.data?.icon.name=='20th anniversary'"  
+                  [href]="data.event.data?.url"
+                  style="word-wrap: break-word; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #0077ca; font-weight: normal; text-decoration: none;"
+                  title="Visit the {{data.event.data?.name }} webpage">
+                  <strong style="padding-left: 3px;">Celebrating 20 years!</strong>
+                </a>
+
+                <br> {{data.event.data?.date }}
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="390" valign="middle" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+          {{data.event.data?.desc }}
+          <a [href]="data.event.data?.url"
+            style="word-wrap: break-word; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #0077ca; font-weight: normal; text-decoration: none;"
+            title="{{data.event.data?.cta }} – {{data.event.data?.name }}">
+            <strong>{{data.event.data?.cta }}</strong>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <table border="0" cellpadding="3" cellspacing="0" style="padding: 3px; margin-bottom:16px;"
     *ngIf="data.social?.style.value === 'button'">
     <tr>
@@ -130,7 +175,7 @@
 
 
 
-  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.event.use" style="padding: 0;">
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.event.use && data.event.data?.icon.name!='20th anniversary'" style="padding: 0;">
     <tbody>
       <tr>
         <td width="210" valign="middle">
@@ -138,14 +183,26 @@
             <tr>
               <td [width]="data.event.data?.size == 1 ? 36 : 24" valign="middle">
                 <img align="none" [src]="data.event.data?.icon.src | absoluteUrl"
-                  [width]="data.event.data?.size == 1 ? 36 : 16" [height]="data.event.data?.size == 1 ? 36 : 16">
+                  [width]="data.event.data?.size == 1 ? 36 : 24" [height]="data.event.data?.size == 1 ? 36 : 24">
               </td>
               <td valign="middle" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
-                <a [href]="data.event.data?.url"
+
+                <a
+                  *ngIf="data.event.data?.icon.name!='20th anniversary'" 
+                  [href]="data.event.data?.url"
                   style="word-wrap: break-word; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #0077ca; font-weight: normal; text-decoration: none;"
                   title="Visit the {{data.event.data?.name }} webpage">
                   <strong>{{data.event.data?.name }}</strong>
                 </a>
+
+                <a
+                  *ngIf="data.event.data?.icon.name=='20th anniversary'"  
+                  [href]="data.event.data?.url"
+                  style="word-wrap: break-word; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #0077ca; font-weight: normal; text-decoration: none;"
+                  title="Visit the {{data.event.data?.name }} webpage">
+                  <strong style="padding-left: 3px;">Celebrating 20 years!</strong>
+                </a>
+
                 <br> {{data.event.data?.date }}
               </td>
             </tr>
