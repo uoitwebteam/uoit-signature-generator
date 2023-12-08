@@ -35,6 +35,11 @@ export interface ImageData {
   width: number;
 }
 
+export interface FeatureData {
+  research: boolean;
+  anniversary: boolean;
+}
+
 export interface EventData {
   icon: FormControlOption;
   size: string;
@@ -64,6 +69,7 @@ export interface FormData {
   };
   logo: FormControlOption;
   image: ImageData;
+  feature: FeatureData;
   event: {
     use: boolean;
     data: EventData;
