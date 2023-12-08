@@ -8,6 +8,7 @@ This tool allows users to create personalized email signatures within a consiste
 - Business (hours)
 - Social networks (links or buttons)
 - Imagery (logos, wordmarks, custom)
+- University Feature (pre-defined university promos)
 - Promotional (event details)
 - Messaging (disclaimers, policies, land acknowledgement)
 

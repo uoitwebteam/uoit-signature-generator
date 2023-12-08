@@ -40,10 +40,11 @@ export const EventIcons: FormControlOption[] = [
     value: 'uoitbook',
     name: 'OT book',
     src: 'https://brand.ontariotechu.ca/apps/assets/event_icons/uoitbook_64x64.jpg'
-  },
-  {
-    value: 'anniversary',
-    name: '20th anniversary',
-    src: 'https://brand.ontariotechu.ca/apps/assets/event_icons/anniversary_64.png'
   }
+  // anniversary has been moved to university feature accordion
+  // {
+  //   value: 'anniversary',
+  //   name: '20th anniversary',
+  //   src: 'https://brand.ontariotechu.ca/apps/assets/event_icons/anniversary_64.png'
+  // }
 ];
