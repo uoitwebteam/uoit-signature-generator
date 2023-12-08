@@ -123,6 +123,10 @@ export class SignatureFormComponent implements OnInit {
         scale: [100, [Validators.min(0), Validators.max(100)]],
         width: [null, [Validators.min(0), Validators.max(600)]]
       }),
+      feature: this.fb.group({
+        anniversary: false,
+        research: false
+      }),
       event: this.fb.group({
         use: false,
         data: this.fb.group({
