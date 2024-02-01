@@ -26,6 +26,12 @@ export const BrandLogos: FormControlOptGroup[] = [
         value: 'otbc',
         src: 'https://brand.ontariotechu.ca/apps/assets/logos/brilliant-catalyst.jpg',
         href: 'https://ontariotechu.ca'
+      },
+      {
+        name: 'Ontario Tech University and Brilliant Energy Institute',
+        value: 'otbei',
+        src: 'https://brand.ontariotechu.ca/apps/assets/logos/bei-associated-logo.jpg',
+        href: 'https://ontariotechu.ca'
       }
     ]
   },
