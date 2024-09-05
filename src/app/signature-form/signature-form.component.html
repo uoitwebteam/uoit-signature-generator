@@ -296,9 +296,9 @@
           <label>Canada’s #1 research university
             <input type="checkbox" formControlName="research">
           </label>
-          <label>20th anniversary
+          <!-- <label>20th anniversary
             <input type="checkbox" formControlName="anniversary">
-          </label>
+          </label> -->
         </div>
       </div>
     </accordion-panel>
@@ -323,7 +323,8 @@
                     </select>
                   </label>
                   <label>Icon size:
-                    <select formControlName="size" ng-disabled="formData.value.event.data.icon.name=='20th anniversary'">
+                    <select formControlName="size"
+                      ng-disabled="formData.value.event.data.icon.name=='20th anniversary'">
                       <option value="" disabled="disabled">Please select...</option>
                       <option value="0">Small</option>
                       <option value="1">Large</option>
@@ -333,30 +334,40 @@
                 <div class="small-8 columns">
                   <label>Event name:
                     <!-- <input type="text" formControlName="name" placeholder="Enter a name here"> -->
-                    <input type="text" formControlName="name" placeholder="Enter a name here" *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
-                    <input type="text" formControlName="name" placeholder="Celebrating 20 years!" readonly *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
+                    <input type="text" formControlName="name" placeholder="Enter a name here"
+                      *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
+                    <input type="text" formControlName="name" placeholder="Celebrating 20 years!" readonly
+                      *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
                   </label>
                   <label>Date:
-                    <input type="text" formControlName="date" placeholder="Enter date[s]" *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
-                    <input type="text" formControlName="date" placeholder="Enter date[s]" readonly *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
+                    <input type="text" formControlName="date" placeholder="Enter date[s]"
+                      *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
+                    <input type="text" formControlName="date" placeholder="Enter date[s]" readonly
+                      *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
                   </label>
                 </div>
               </div>
             </div>
             <div class="small-6 columns">
               <label>Description:
-                <input type="text" formControlName="desc" placeholder="Enter description here" *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
-                <input type="text" formControlName="desc" placeholder="Enter description here" readonly *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
+                <input type="text" formControlName="desc" placeholder="Enter description here"
+                  *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
+                <input type="text" formControlName="desc" placeholder="Enter description here" readonly
+                  *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
               </label>
               <label>Call-to-action:
-                <input type="text" formControlName="cta" placeholder="e.g. Learn more &raquo;" *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
-                <input type="text" formControlName="cta" placeholder="e.g. Learn more &raquo;" readonly *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
+                <input type="text" formControlName="cta" placeholder="e.g. Learn more &raquo;"
+                  *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
+                <input type="text" formControlName="cta" placeholder="e.g. Learn more &raquo;" readonly
+                  *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
               </label>
             </div>
             <div class="small-12 columns">
               <label>Link URL:
-                <input type="text" formControlName="url" placeholder="http://" *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
-                <input type="text" formControlName="url" placeholder="http://" readonly *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
+                <input type="text" formControlName="url" placeholder="http://"
+                  *ngIf="formData.value.event.data.icon.name!='20th anniversary'">
+                <input type="text" formControlName="url" placeholder="http://" readonly
+                  *ngIf="formData.value.event.data.icon.name=='20th anniversary'">
               </label>
             </div>
           </div>
