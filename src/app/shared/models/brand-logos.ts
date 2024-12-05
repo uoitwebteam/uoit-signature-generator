@@ -50,10 +50,10 @@ export const BrandLogos: FormControlOptGroup[] = [
     name: 'Events',
     options: [
       {
-        name: 'Pi Day',
-        value: 'piday',
-        src: 'https://brand.ontariotechu.ca/apps/assets/logos/piday.jpg',
-        href: 'https://ontariotechu.ca/piday'
+        name: 'Tech with a Conscience',
+        value: 'twac',
+        src: 'https://brand.ontariotechu.ca/apps/assets/logos/twac.png',
+        href: 'https://giving.ontariotechu.ca/index.php'
       }
     ]
   }
