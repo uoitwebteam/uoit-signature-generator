@@ -1,52 +1,38 @@
 <div style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
   <p style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
-    <strong *ngIf="data.name?.first || data.name?.last"
-      >{{ data.name.first }} {{ data.name.last }}
+    <strong *ngIf="data.name?.first || data.name?.last">{{ data.name.first }} {{ data.name.last }}
       <br />
     </strong>
-    <span *ngIf="data.name?.pronouns"
-      >Pronouns:<a
-        style="text-decoration: underline"
-        href="https://studentlife.ontariotechu.ca/services/equity-and-inclusion/equity-resources/pronouns.php"
-      >
-        {{ data.name.pronouns }}</a
-      >
+    <span *ngIf="data.name?.pronouns">Pronouns:<a style="text-decoration: underline"
+        href="https://studentlife.ontariotechu.ca/services/equity-and-inclusion/equity-resources/pronouns.php">
+        {{ data.name.pronouns }}</a>
       <br />
     </span>
-    <span *ngIf="data.credentials?.title || data.credentials?.dept"
-      >{{ data.credentials.title }} - {{ data.credentials.dept }}
+    <span *ngIf="data.credentials?.title || data.credentials?.dept">{{ data.credentials.title }} - {{
+      data.credentials.dept }}
       <br />
     </span>
     Ontario Tech University
     <br />
-    <span *ngIf="data.contact?.phone || data.contact?.ext"
-      >{{ data.contact.phone }}
+    <span *ngIf="data.contact?.phone || data.contact?.ext">{{ data.contact.phone }}
       {{ data.contact.ext ? "ext. " + data.contact.ext : "" }}
       <br />
     </span>
-    <span *ngIf="data.contact?.mobile"
-      >{{ data.contact.mobile }} (cell)
+    <span *ngIf="data.contact?.mobile">{{ data.contact.mobile }} (cell)
       <br />
     </span>
-    <span *ngIf="data.contact?.fax || data.contact?.faxext"
-      >{{ data.contact.fax }}
+    <span *ngIf="data.contact?.fax || data.contact?.faxext">{{ data.contact.fax }}
       {{ data.contact.faxext ? "ext. " + data.contact.faxext : "" }} (fax)
       <br />
     </span>
     <span *ngIf="data.contact?.email">
-      <a
-        href="mailto:{{ data.contact.email }}"
-        style="color: #0077ca; text-decoration: none"
-        >{{ data.contact.email | lowercase }}</a
-      >
+      <a href="mailto:{{ data.contact.email }}" style="color: #0077ca; text-decoration: none">{{ data.contact.email |
+        lowercase }}</a>
       <br />
     </span>
     <span *ngIf="data.contact?.website">
-      <a
-        href="http://{{ data.contact.website }}"
-        style="color: #0077ca; text-decoration: none"
-        >{{ data.contact.website }}</a
-      >
+      <a href="http://{{ data.contact.website }}" style="color: #0077ca; text-decoration: none">{{ data.contact.website
+        }}</a>
     </span>
   </p>
 
@@ -59,180 +45,119 @@
   <table border="0" cellpadding="0" cellspacing="0" style="padding: 3px; margin-bottom: 8px">
     <tr>
       <td>
-        <a
-          style="border: 0; outline: none"
-          title="Visit the {{ data.logo?.name }} website"
-          [href]="data.logo?.href"
-        >
-          <img
-            style="border: 0"
-            [src]="data.logo?.src | absoluteUrl"
-            alt="{{ data.logo?.name }} logo"
-            absoluteDimensions="50%"
-          />
+        <a style="border: 0; outline: none" title="Visit the {{ data.logo?.name }} website" [href]="data.logo?.href">
+          <img style="border: 0" [src]="data.logo?.src | absoluteUrl" alt="{{ data.logo?.name }} logo"
+            absoluteDimensions="50%" />
         </a>
       </td>
     </tr>
   </table>
 
   <!-- university feature promo: #1 research university -->
-  <table
-  width="560"
-  cellpadding="0"
-  cellspacing="0"
-  *ngIf="data.feature?.research"
-  style="padding: 3px; margin-bottom: 16px"
->
-  <tbody>
-    <tr>
-      <!-- <td width="230" valign="middle"> -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.research"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <!-- <td width="230" valign="middle"> -->
         <!-- <table> -->
-          <!-- <tr> -->
+        <!-- <tr> -->
 
-            <td
-              valign="middle"
-              style="
+        <td valign="middle" style="
                 font-size: 12px;
                 font-family: Arial, Helvetica, sans-serif;
-              "
-            >
-              <a
-                href="https://news.ontariotechu.ca/archives/2023/12/top-marks-ontario-tech-named-canadas-research-university-of-the-year.php"
-                style="
+              ">
+          <a href="https://news.ontariotechu.ca/archives/2024/12/ontario-tech-named-canadas-research-university-of-the-yearagain.php"
+            style="
                   word-wrap: break-word;
                   -ms-text-size-adjust: 100%;
                   -webkit-text-size-adjust: 100%;
                   color: #003C71;
                   font-weight: normal;
                   text-decoration: none;
-                "
-                title="Visit the news page"
-              >
-                <strong style="padding-left: 3px"
-                  >Canada’s #1 research university</strong
-                >
-              </a>
-            </td>
+                " title="Visit the news page">
+            <strong style="padding-left: 3px">Canada’s #1 research university</strong>
+          </a>
+        </td>
 
         <!-- </tr> -->
-      <!-- </table> -->
-  </tr>
-</tbody>
-</table>
-
-<!-- university feature promo: 20th anniversary -->
-  <table
-    width="560"
-    cellpadding="0"
-    cellspacing="0"
-    *ngIf="data.feature?.anniversary"
-    style="padding: 3px; margin-bottom: 16px"
-  >
-    <tbody>
-      <tr>
-        <!-- <td width="230" valign="middle"> -->
-          <!-- <table> -->
-            <!-- <tr> -->
-
-              <td [width]="50" valign="middle">
-                <a
-                  href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php"
-                >
-                  <img
-                    align="none"
-                    src="https://brand.ontariotechu.ca/apps/assets/event_icons/anniversary_64.png"
-                    [width]="50"
-                    [height]="24"
-                  />
-                </a>
-              </td>
-
-              <td
-                valign="middle"
-                style="
-                  font-size: 12px;
-                  font-family: Arial, Helvetica, sans-serif;
-                "
-              >
-                <a
-                  href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php"
-                  style="
-                    word-wrap: break-word;
-                    -ms-text-size-adjust: 100%;
-                    -webkit-text-size-adjust: 100%;
-                    color: #0077ca;
-                    font-weight: normal;
-                    text-decoration: none;
-                  "
-                  title="Visit the news page"
-                >
-                  <strong style="padding-left: 3px"
-                    >Celebrating 20 years!</strong
-                  >
-                </a>
-              </td>
-
-          <!-- </tr> -->
         <!-- </table> -->
-    </tr>
-  </tbody>
-</table>
+      </tr>
+    </tbody>
+  </table>
 
-  <table
-    width="560"
-    cellpadding="0"
-    cellspacing="0"
-    *ngIf="data.event.use && data.event.data?.icon.name == '20th anniversary'"
-    style="padding: 3px; margin-bottom: 16px"
-  >
+  <!-- university feature promo: 20th anniversary -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.anniversary"
+    style="padding: 3px; margin-bottom: 16px">
     <tbody>
       <tr>
         <!-- <td width="230" valign="middle"> -->
-          <!-- <table> -->
-            <!-- <tr> -->
+        <!-- <table> -->
+        <!-- <tr> -->
 
-              <td [width]="50" valign="middle">
-                <a
-                  href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php"
-                >
-                  <img
-                    align="none"
-                    [src]="data.event.data?.icon.src | absoluteUrl"
-                    [width]="50"
-                    [height]="24"
-                  />
-                </a>
-              </td>
+        <td [width]="50" valign="middle">
+          <a href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php">
+            <img align="none" src="https://brand.ontariotechu.ca/apps/assets/event_icons/anniversary_64.png"
+              [width]="50" [height]="24" />
+          </a>
+        </td>
 
-              <td
-                valign="middle"
-                style="
+        <td valign="middle" style="
                   font-size: 12px;
                   font-family: Arial, Helvetica, sans-serif;
-                "
-              >
-                <a
-                  href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php"
-                  style="
+                ">
+          <a href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php" style="
                     word-wrap: break-word;
                     -ms-text-size-adjust: 100%;
                     -webkit-text-size-adjust: 100%;
                     color: #0077ca;
                     font-weight: normal;
                     text-decoration: none;
-                  "
-                  title="Visit the {{ data.event.data?.name }} webpage"
-                >
-                  <strong style="padding-left: 3px"
-                    >Celebrating 20 years!</strong
-                  >
-                </a>
-                <br />
-                {{ data.event.data?.date }}
-              </td>
+                  " title="Visit the news page">
+            <strong style="padding-left: 3px">Celebrating 20 years!</strong>
+          </a>
+        </td>
 
-            <!-- </tr> -->
-          <!-- </table> -->
+        <!-- </tr> -->
+        <!-- </table> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <table width="560" cellpadding="0" cellspacing="0"
+    *ngIf="data.event.use && data.event.data?.icon.name == '20th anniversary'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <!-- <td width="230" valign="middle"> -->
+        <!-- <table> -->
+        <!-- <tr> -->
+
+        <td [width]="50" valign="middle">
+          <a href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php">
+            <img align="none" [src]="data.event.data?.icon.src | absoluteUrl" [width]="50" [height]="24" />
+          </a>
+        </td>
+
+        <td valign="middle" style="
+                  font-size: 12px;
+                  font-family: Arial, Helvetica, sans-serif;
+                ">
+          <a href="https://news.ontariotechu.ca/archives/2023/09/ontario-tech-university-celebrates-20-years.php" style="
+                    word-wrap: break-word;
+                    -ms-text-size-adjust: 100%;
+                    -webkit-text-size-adjust: 100%;
+                    color: #0077ca;
+                    font-weight: normal;
+                    text-decoration: none;
+                  " title="Visit the {{ data.event.data?.name }} webpage">
+            <strong style="padding-left: 3px">Celebrating 20 years!</strong>
+          </a>
+          <br />
+          {{ data.event.data?.date }}
+        </td>
+
+        <!-- </tr> -->
+        <!-- </table> -->
       </tr>
     </tbody>
   </table>
@@ -260,21 +185,11 @@
     </tr>
   </table> -->
 
-  <table
-    border="0"
-    cellpadding="3"
-    cellspacing="0"
-    style="padding: 3px; margin-bottom: 16px"
-    *ngIf="data.social?.style.value === 'button'"
-  >
+  <table border="0" cellpadding="3" cellspacing="0" style="padding: 3px; margin-bottom: 16px"
+    *ngIf="data.social?.style.value === 'button'">
     <tr>
-      <td
-        *ngFor="let network of data.social?.networks"
-        style="padding: 0; padding-right: 4px"
-      >
-        <a
-          style="border: 0; outline: none"
-          title="{{
+      <td *ngFor="let network of data.social?.networks" style="padding: 0; padding-right: 4px">
+        <a style="border: 0; outline: none" title="{{
             [
               network.type.cta,
               network.type.value === 'tw' ||
@@ -285,40 +200,23 @@
               'on',
               network.type.name
             ].join(' ')
-          }}"
-          [href]="
+          }}" [href]="
             network.type.href +
             (network.account ? network.account.value + '/' : '') +
             (network.username || network.type.default)
-          "
-          *ngIf="network.type"
-        >
-          <img
-            [src]="network.type.src | absoluteUrl"
-            alt="{{ network.type.name }} icon"
-            width="28"
-            height="28"
-            style="border: 0; width: 28px; height: auto"
-          />
+          " *ngIf="network.type">
+          <img [src]="network.type.src | absoluteUrl" alt="{{ network.type.name }} icon" width="28" height="28"
+            style="border: 0; width: 28px; height: auto" />
         </a>
       </td>
     </tr>
   </table>
 
-  <table
-    border="0"
-    cellpadding="3"
-    cellspacing="0"
-    style="padding: 3px; margin-bottom: 16px"
-    *ngIf="data.social?.style.value === 'both'"
-  >
+  <table border="0" cellpadding="3" cellspacing="0" style="padding: 3px; margin-bottom: 16px"
+    *ngIf="data.social?.style.value === 'both'">
     <tr *ngFor="let network of data.social?.networks">
-      <td
-        style="padding: 0; font-size: 12px; vertical-align: middle"
-        valign="middle"
-      >
-        <a
-          style="
+      <td style="padding: 0; font-size: 12px; vertical-align: middle" valign="middle">
+        <a style="
             border: 0;
             outline: none;
             vertical-align: middle;
@@ -328,35 +226,24 @@
             color: #0077ca;
             font-weight: normal;
             text-decoration: none;
-          "
-          valign="middle"
-          [href]="
+          " valign="middle" [href]="
             network.type.href +
             (network.account ? network.account.value + '/' : '') +
             (network.username || network.type.default)
-          "
-          *ngIf="network.type"
-        >
-          <img
-            [src]="network.type.src | absoluteUrl"
-            alt="{{ network.type.name }} icon"
-            width="28"
-            height="28"
-            style="
+          " *ngIf="network.type">
+          <img [src]="network.type.src | absoluteUrl" alt="{{ network.type.name }} icon" width="28" height="28" style="
               border: 0;
               width: 28px;
               height: 28px;
               margin-right: 4px;
               vertical-align: middle;
-            "
-            valign="middle"
-          />
+            " valign="middle" />
           {{ network.type.cta }}
           <strong>{{
             network.type.value === "tw" || network.type.value === "in"
-              ? "@" + network.username
-              : network.username
-          }}</strong>
+            ? "@" + network.username
+            : network.username
+            }}</strong>
           on {{ network.type.name }}
           <br />
         </a>
@@ -364,20 +251,11 @@
     </tr>
   </table>
 
-  <table
-    border="0"
-    cellpadding="3"
-    cellspacing="0"
-    style="padding: 3px; margin-bottom: 16px"
-    *ngIf="data.social?.style.value === 'link'"
-  >
+  <table border="0" cellpadding="3" cellspacing="0" style="padding: 3px; margin-bottom: 16px"
+    *ngIf="data.social?.style.value === 'link'">
     <tr *ngFor="let network of data.social?.networks">
-      <td
-        style="padding: 0; font-size: 12px; vertical-align: middle"
-        valign="middle"
-      >
-        <a
-          style="
+      <td style="padding: 0; font-size: 12px; vertical-align: middle" valign="middle">
+        <a style="
             border: 0;
             outline: none;
             vertical-align: middle;
@@ -387,21 +265,17 @@
             color: #0077ca;
             font-weight: normal;
             text-decoration: none;
-          "
-          valign="middle"
-          [href]="
+          " valign="middle" [href]="
             network.type.href +
             (network.account ? network.account.value + '/' : '') +
             (network.username || network.type.default)
-          "
-          *ngIf="network.type"
-        >
+          " *ngIf="network.type">
           {{ network.type.cta }}
           <strong>{{
             network.type.value === "tw" || network.type.value === "in"
-              ? "@" + network.username
-              : network.username
-          }}</strong>
+            ? "@" + network.username
+            : network.username
+            }}</strong>
           on {{ network.type.name }}
           <br />
         </a>
@@ -409,68 +283,41 @@
     </tr>
   </table>
 
-  <table
-    width="560"
-    cellpadding="0"
-    cellspacing="0"
-    *ngIf="data.event.use && data.event.data?.icon.name != '20th anniversary'"
-    style="padding: 0"
-  >
+  <table width="560" cellpadding="0" cellspacing="0"
+    *ngIf="data.event.use && data.event.data?.icon.name != '20th anniversary'" style="padding: 0">
     <tbody>
       <tr>
         <td width="210" valign="middle">
           <table>
             <tr>
-              <td
-                [width]="data.event.data?.size == 1 ? 36 : 24"
-                valign="middle"
-              >
-                <img
-                  align="none"
-                  [src]="data.event.data?.icon.src | absoluteUrl"
-                  [width]="data.event.data?.size == 1 ? 36 : 24"
-                  [height]="data.event.data?.size == 1 ? 36 : 24"
-                />
+              <td [width]="data.event.data?.size == 1 ? 36 : 24" valign="middle">
+                <img align="none" [src]="data.event.data?.icon.src | absoluteUrl"
+                  [width]="data.event.data?.size == 1 ? 36 : 24" [height]="data.event.data?.size == 1 ? 36 : 24" />
               </td>
-              <td
-                valign="middle"
-                style="
+              <td valign="middle" style="
                   font-size: 12px;
                   font-family: Arial, Helvetica, sans-serif;
-                "
-              >
-                <a
-                  *ngIf="data.event.data?.icon.name != '20th anniversary'"
-                  [href]="data.event.data?.url"
-                  style="
+                ">
+                <a *ngIf="data.event.data?.icon.name != '20th anniversary'" [href]="data.event.data?.url" style="
                     word-wrap: break-word;
                     -ms-text-size-adjust: 100%;
                     -webkit-text-size-adjust: 100%;
                     color: #0077ca;
                     font-weight: normal;
                     text-decoration: none;
-                  "
-                  title="Visit the {{ data.event.data?.name }} webpage"
-                >
+                  " title="Visit the {{ data.event.data?.name }} webpage">
                   <strong>{{ data.event.data?.name }}</strong>
                 </a>
 
-                <a
-                  *ngIf="data.event.data?.icon.name == '20th anniversary'"
-                  [href]="data.event.data?.url"
-                  style="
+                <a *ngIf="data.event.data?.icon.name == '20th anniversary'" [href]="data.event.data?.url" style="
                     word-wrap: break-word;
                     -ms-text-size-adjust: 100%;
                     -webkit-text-size-adjust: 100%;
                     color: #0077ca;
                     font-weight: normal;
                     text-decoration: none;
-                  "
-                  title="Visit the {{ data.event.data?.name }} webpage"
-                >
-                  <strong style="padding-left: 3px"
-                    >Celebrating 20 years!</strong
-                  >
+                  " title="Visit the {{ data.event.data?.name }} webpage">
+                  <strong style="padding-left: 3px">Celebrating 20 years!</strong>
                 </a>
 
                 <br />
@@ -479,24 +326,16 @@
             </tr>
           </table>
         </td>
-        <td
-          width="390"
-          valign="middle"
-          style="font-size: 12px; font-family: Arial, Helvetica, sans-serif"
-        >
+        <td width="390" valign="middle" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif">
           {{ data.event.data?.desc }}
-          <a
-            [href]="data.event.data?.url"
-            style="
+          <a [href]="data.event.data?.url" style="
               word-wrap: break-word;
               -ms-text-size-adjust: 100%;
               -webkit-text-size-adjust: 100%;
               color: #0077ca;
               font-weight: normal;
               text-decoration: none;
-            "
-            title="{{ data.event.data?.cta }} – {{ data.event.data?.name }}"
-          >
+            " title="{{ data.event.data?.cta }} – {{ data.event.data?.name }}">
             <strong>{{ data.event.data?.cta }}</strong>
           </a>
         </td>
@@ -504,68 +343,43 @@
     </tbody>
   </table>
 
-  <table
-    width="560"
-    height="1px"
-    cellpadding="0"
-    cellspacing="0"
-    style="height: 1px; padding: 0; margin-bottom: 16px; width: 560px"
-    *ngIf="data.message?.content"
-  >
+  <table width="560" height="1px" cellpadding="0" cellspacing="0"
+    style="height: 1px; padding: 0; margin-bottom: 16px; width: 560px" *ngIf="data.message?.content">
     <tr>
-      <td
-        height="1px"
-        style="
+      <td height="1px" style="
           background: none;
           border-bottom: 1px solid #ededed;
           height: 1px;
           width: 100%;
           margin: 0;
-        "
-      >
+        ">
         &nbsp;
       </td>
     </tr>
   </table>
 
-  <table
-    width="560"
-    cellpadding="0"
-    cellspacing="0"
-    *ngIf="data.message?.content"
-  >
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.message?.content">
     <tr>
-      <td
-        style="
+      <td style="
           font-family: Arial, Helvetica, sans-serif;
           line-height: 1.5;
           color: #666666;
-        "
-        [ngStyle]="{ 'font-size.px': data.message?.style }"
-      >
+        " [ngStyle]="{ 'font-size.px': data.message?.style }">
         {{ data.message.content }}
       </td>
     </tr>
   </table>
 
-  <table
-    width="560"
-    cellpadding="0"
-    cellspacing="0"
-    *ngIf="data.message?.acknowledgement || data.message?.brand"
-  >
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.message?.acknowledgement || data.message?.brand">
     <tbody>
       <tr>
-        <td
-          valign="top"
-          style="
+        <td valign="top" style="
             padding: 0 9px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
             line-height: 1.5;
             color: #666666;
-          "
-        >
+          ">
           <!-- 
           <table *ngIf="data.message?.brand" cellpadding="0" cellspacing="0" >
             <tbody>
@@ -578,29 +392,15 @@
             </tbody>
           </table> -->
 
-          <table
-            *ngIf="data.message?.acknowledgement"
-            cellpadding="0"
-            cellspacing="0"
-          >
+          <table *ngIf="data.message?.acknowledgement" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>
-                <td
-                  valign="top"
-                  *ngIf="
+                <td valign="top" *ngIf="
                     data.message?.acknowledgement &&
                     data.message?.acknowledgementImage
-                  "
-                  width="60"
-                >
-                  <img
-                    class="indigenous-image"
-                    width="50"
-                    height="28"
-                    style="width: 50px; height: 28px"
-                    [src]="'assets/logos/indigenous.jpg' | absoluteUrl"
-                    alt="Indigenous Logo"
-                  />
+                  " width="60">
+                  <img class="indigenous-image" width="50" height="28" style="width: 50px; height: 28px"
+                    [src]="'assets/logos/indigenous.jpg' | absoluteUrl" alt="Indigenous Logo" />
                 </td>
 
                 <td valign="top" *ngIf="data.message?.acknowledgement">
