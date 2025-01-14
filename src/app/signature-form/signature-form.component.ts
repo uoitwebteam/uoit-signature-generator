@@ -103,7 +103,11 @@ export class SignatureFormComponent implements OnInit {
         title: '',
         dept: ''
       }),
-      hours: '',
+      // hours: '',
+      officehours: this.fb.group({
+        hours: '',
+        disconnect: false
+      }),
       social: this.fb.group({
         style: this.buttonStyles[0],
         networks: this.fb.array([

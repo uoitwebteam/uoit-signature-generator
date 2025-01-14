@@ -115,10 +115,13 @@
       </div>
     </accordion-panel>
 
-    <accordion-panel heading="Office Hours">
+    <accordion-panel heading="Office Hours" formGroupName="officehours">
       <div class="padding-1">
         <label>Hours
           <input type="text" formControlName="hours">
+        </label>
+        <label>Add Disconnecting from Work text
+          <input type="checkbox" formControlName="disconnect">
         </label>
         <!--
 				<fieldset class="fieldset" formGroupName="hours">

@@ -6,6 +6,11 @@ export interface NameData {
   pronouns: string;
 }
 
+export interface OfficeHoursData {
+  hours: string;
+  disconnect: boolean;
+}
+
 export interface ContactData {
   phone: string;
   ext: string;
@@ -62,7 +67,7 @@ export interface FormData {
   name: NameData;
   contact: ContactData;
   credentials: CredentialsData;
-  hours: string;
+  officehours: OfficeHoursData;
   social: {
     style: FormControlOption;
     networks: SocialNetworkData[];
