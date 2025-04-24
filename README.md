@@ -52,3 +52,7 @@ Model files that store content-related data can be found in `/src/app/shared/mod
 - social networks
 
 To add new selection options to the signature generator, any new assets must be referred to in a model file.
+
+## Node version
+
+8.16.2
