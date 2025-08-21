@@ -4,6 +4,8 @@ export interface NameData {
   first: string;
   last: string;
   pronouns: string;
+  pronunciationUse: boolean;
+  pronunciationLink: string;
 }
 
 export interface OfficeHoursData {
@@ -41,8 +43,8 @@ export interface ImageData {
 }
 
 export interface FeatureData {
-  research: boolean;
   anniversary: boolean;
+  selected: string;
 }
 
 export interface EventData {

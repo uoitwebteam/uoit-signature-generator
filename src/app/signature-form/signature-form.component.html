@@ -14,7 +14,7 @@
 		</label>
 	</fieldset> -->
   <accordion>
-    <accordion-panel heading="Contact Information">
+    <accordion-panel heading="Contact information">
       <div class="padding-1">
         <fieldset class="fieldset" formGroupName="name">
           <legend>Name</legend>
@@ -38,6 +38,34 @@
             <div class="small-6 columns">
               <label>Pronouns
                 <input type="text" placeholder="They/Them/Theirs" formControlName="pronouns" data-lpignore="true">
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 columns">
+              <label>
+                <input type="checkbox" formControlName="pronunciationUse">
+                Include name pronunciation
+              </label>
+            </div>
+          </div>
+          <div class="row" [hidden]="!formData.value.name.pronunciationUse">
+            <div class="small-12 columns">
+              <div class="callout primary">
+                <p>
+                  <a href="https://namedrop.io/" target="_blank" rel="noopener noreferrer">Click here to visit
+                    NameDrop.io</a>
+                  where you can create a free account and record your name pronunciation.
+                  After recording, copy the unique link and paste it below to add it to your signature.
+                </p>
+              </div>
+              <label>NameDrop Link
+                <input type="url" formControlName="pronunciationLink"
+                  placeholder="https://namedrop.io/your-unique-link">
+                <span class="form-error"
+                  [class.is-visible]="formData.get('name.pronunciationLink').invalid && formData.get('name.pronunciationLink').dirty">
+                  Please enter a valid NameDrop.io URL
+                </span>
               </label>
             </div>
           </div>
@@ -115,13 +143,14 @@
       </div>
     </accordion-panel>
 
-    <accordion-panel heading="Office Hours" formGroupName="officehours">
+    <accordion-panel heading="Office hours" formGroupName="officehours">
       <div class="padding-1">
         <label>Hours
           <input type="text" formControlName="hours">
         </label>
-        <label>Add Disconnecting from Work text
+        <label>
           <input type="checkbox" formControlName="disconnect">
+          Include disconnecting from work
         </label>
         <!--
 				<fieldset class="fieldset" formGroupName="hours">
@@ -293,11 +322,40 @@
       </div>
     </accordion-panel>
 
-    <accordion-panel heading="University Feature" formGroupName="feature">
+    <accordion-panel heading="University feature" formGroupName="feature">
       <div class="row padding-1">
         <div class="small-12 columns">
-          <label>Canada’s #1 undergraduate research university
-            <input type="checkbox" formControlName="research">
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="">
+            None
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="reputation">
+            #1 among undergrad universities for reputation
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="studentServices">
+            Top 10 among undergrad universities for student services
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="energyScience">
+            #2 in Canada and top 100 worldwide for Energy Science and Engineering (Shanghai Ranking 2024)
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="engineering">
+            #3 in Ontario as one of the best universities to study engineering (US News)
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="youngUniversity">
+            #2 in Canada, 144th in the world, as one of the top young universities (Times Higher Education)
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="employment6months">
+            89% of graduates are employed within 6 months of graduation
+          </label>
+          <label style="margin:0 0 6px 0">
+            <input style="margin:0 6px 0 0" type="radio" formControlName="selected" value="employmentField">
+            78% of graduates are employed within their field
           </label>
           <!-- <label>20th anniversary
             <input type="checkbox" formControlName="anniversary">
@@ -309,8 +367,9 @@
     <accordion-panel heading="Event" formGroupName="event">
       <div class="padding-1">
 
-        <label>Include an event promotion?
+        <label>
           <input type="checkbox" formControlName="use">
+          Include an event promotion
         </label>
 
         <fieldset class="fieldset" formGroupName="data" [hidden]="!formData.value.event.use">
@@ -410,8 +469,9 @@
       </div> -->
       <div class="row padding-1">
         <div class="small-12 columns">
-          <label>Include land acknowledgement?
+          <label>
             <input type="checkbox" formControlName="acknowledgement">
+            Include land acknowledgement
           </label>
           <small *ngIf="formData.value.message.acknowledgement">
             "We acknowledge the lands and people of the Mississaugas of Scugog Island First Nation which is covered
@@ -422,8 +482,9 @@
       </div>
       <div class="row padding-1" *ngIf="formData.value.message.acknowledgement">
         <div class="small-12 columns">
-          <label>Include land acknowledgement image?
+          <label>
             <input type="checkbox" formControlName="acknowledgementImage">
+            Include land acknowledgement image
           </label>
           <img *ngIf="formData.value.message.acknowledgementImage" [src]="'assets/logos/indigenous.jpg' | absoluteUrl"
             alt="">

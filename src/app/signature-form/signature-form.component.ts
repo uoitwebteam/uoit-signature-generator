@@ -88,7 +88,9 @@ export class SignatureFormComponent implements OnInit {
       name: this.fb.group({
         first: ['', Validators.required],
         last: ['', Validators.required],
-        pronouns: ''
+        pronouns: '',
+        pronunciationUse: false,
+        pronunciationLink: ['', [Validators.pattern(/namedrop\.io/)]]
       }),
       contact: this.fb.group({
         phone: ['905.721.8668', Validators.required],
@@ -129,7 +131,7 @@ export class SignatureFormComponent implements OnInit {
       }),
       feature: this.fb.group({
         anniversary: false,
-        research: false
+        selected: ''
       }),
       event: this.fb.group({
         use: false,

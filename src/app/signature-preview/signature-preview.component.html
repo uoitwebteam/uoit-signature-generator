@@ -3,7 +3,14 @@
     <strong *ngIf="data.name?.first || data.name?.last">{{ data.name.first }} {{ data.name.last }}
       <br />
     </strong>
-    <span *ngIf="data.name?.pronouns">Pronouns:<a style="text-decoration: underline"
+    <span *ngIf="data.name?.pronunciationUse && data.name?.pronunciationLink">
+      <a [href]="data.name.pronunciationLink" target="_blank" rel="noopener noreferrer"
+        style="color: #0077ca; text-decoration: none; font-size: 14px;">
+        🔊 Hear my name
+      </a>
+      <br />
+    </span>
+    <span *ngIf="data.name?.pronouns">Pronouns: <a
         href="https://studentlife.ontariotechu.ca/services/equity-and-inclusion/equity-resources/pronouns.php">
         {{ data.name.pronouns }}</a>
       <br />
@@ -42,7 +49,8 @@
     {{ data.officehours.hours }}
   </p>
   <p *ngIf="data.officehours?.disconnect"
-    style="font-style:italic; Arial, Helvetica, sans-serif;font-size: 11px;line-height: 1.5;color: #666666;">Please do
+    style="font-style: italic; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 1.5; color: #666666;">
+    Please do
     not feel obliged to reply to this email outside of your work hours.
   </p>
 
@@ -52,40 +60,179 @@
       <td>
         <a style="border: 0; outline: none" title="Visit the {{ data.logo?.name }} website" [href]="data.logo?.href">
           <img style="border: 0" [src]="data.logo?.src | absoluteUrl" alt="{{ data.logo?.name }} logo"
-            absoluteDimensions="50%" />
+            absoluteDimensions="80%" />
         </a>
       </td>
     </tr>
   </table>
 
-  <!-- university feature promo: #1 research university -->
-  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.research"
+  <!-- university feature promo: #1 reputation -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'reputation'"
     style="padding: 3px; margin-bottom: 16px">
     <tbody>
       <tr>
-        <!-- <td width="230" valign="middle"> -->
-        <!-- <table> -->
-        <!-- <tr> -->
-
         <td valign="middle" style="
                 font-size: 12px;
                 font-family: Arial, Helvetica, sans-serif;
               ">
-          <a href="https://news.ontariotechu.ca/archives/2024/12/ontario-tech-named-canadas-research-university-of-the-yearagain.php"
-            style="
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
                   word-wrap: break-word;
                   -ms-text-size-adjust: 100%;
                   -webkit-text-size-adjust: 100%;
                   color: #003C71;
                   font-weight: normal;
                   text-decoration: none;
-                " title="Visit the news page">
-            <strong style="padding-left: 3px">Canada’s #1 undergraduate research university</strong>
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">#1 among undergrad universities for reputation</strong>
           </a>
         </td>
+      </tr>
+    </tbody>
+  </table>
 
-        <!-- </tr> -->
-        <!-- </table> -->
+  <!-- university feature promo: Top 10 student services -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'studentServices'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
+                  word-wrap: break-word;
+                  -ms-text-size-adjust: 100%;
+                  -webkit-text-size-adjust: 100%;
+                  color: #003C71;
+                  font-weight: normal;
+                  text-decoration: none;
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">Top 10 among undergrad universities for student services</strong>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- university feature promo: Energy Science and Engineering -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'energyScience'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
+                  word-wrap: break-word;
+                  -ms-text-size-adjust: 100%;
+                  -webkit-text-size-adjust: 100%;
+                  color: #003C71;
+                  font-weight: normal;
+                  text-decoration: none;
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">#2 in Canada and top 100 worldwide for Energy Science and Engineering
+              (Shanghai Ranking 2024)</strong>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- university feature promo: Engineering -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'engineering'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
+                  word-wrap: break-word;
+                  -ms-text-size-adjust: 100%;
+                  -webkit-text-size-adjust: 100%;
+                  color: #003C71;
+                  font-weight: normal;
+                  text-decoration: none;
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">#3 in Ontario as one of the best universities to study engineering (US
+              News)</strong>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- university feature promo: Young University -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'youngUniversity'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
+                  word-wrap: break-word;
+                  -ms-text-size-adjust: 100%;
+                  -webkit-text-size-adjust: 100%;
+                  color: #003C71;
+                  font-weight: normal;
+                  text-decoration: none;
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">#2 in Canada, 144th in the world, as one of the top young universities
+              (Times Higher Education)</strong>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- university feature promo: Employment 6 months -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'employment6months'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
+                  word-wrap: break-word;
+                  -ms-text-size-adjust: 100%;
+                  -webkit-text-size-adjust: 100%;
+                  color: #003C71;
+                  font-weight: normal;
+                  text-decoration: none;
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">89% of graduates are employed within 6 months of graduation</strong>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- university feature promo: Employment in field -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.feature?.selected === 'employmentField'"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <a href="https://ontariotechu.ca/about/rankings.php" style="
+                  word-wrap: break-word;
+                  -ms-text-size-adjust: 100%;
+                  -webkit-text-size-adjust: 100%;
+                  color: #003C71;
+                  font-weight: normal;
+                  text-decoration: none;
+                " title="Visit Ontario Tech University Rankings">
+            <strong style="padding-left: 3px">78% of graduates are employed within their field</strong>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -193,7 +340,7 @@
   <table border="0" cellpadding="3" cellspacing="0" style="padding: 3px; margin-bottom: 16px"
     *ngIf="data.social?.style.value === 'button'">
     <tr>
-      <td *ngFor="let network of data.social?.networks" style="padding: 0; padding-right: 4px">
+      <td *ngFor="let network of data.social?.networks" style="padding: 0; padding-right: 6px">
         <a style="border: 0; outline: none" title="{{
             [
               network.type.cta,
@@ -291,11 +438,11 @@
   <table width="560" cellpadding="0" cellspacing="0"
     *ngIf="data.event.use && data.event.data?.icon.name != '20th anniversary'" style="padding: 0">
     <tbody>
-      <tr>
-        <td width="210" valign="middle">
-          <table>
+      <tr style="display:flex; flex-direction:column">
+        <td valign="middle">
+          <table style="margin-bottom: 6px">
             <tr>
-              <td [width]="data.event.data?.size == 1 ? 36 : 24" valign="middle">
+              <td [width]="data.event.data?.size == 1 ? 36 : 24" valign="middle" style="padding-right: 6px">
                 <img align="none" [src]="data.event.data?.icon.src | absoluteUrl"
                   [width]="data.event.data?.size == 1 ? 36 : 24" [height]="data.event.data?.size == 1 ? 36 : 24" />
               </td>
@@ -331,7 +478,7 @@
             </tr>
           </table>
         </td>
-        <td width="390" valign="middle" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif">
+        <td valign="middle" style="font-size: 12px; font-family: Arial, Helvetica, sans-serif">
           {{ data.event.data?.desc }}
           <a [href]="data.event.data?.url" style="
               word-wrap: break-word;
@@ -379,7 +526,7 @@
     <tbody>
       <tr>
         <td valign="top" style="
-            padding: 0 9px;
+            /* padding: 0 9px; */
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
             line-height: 1.5;
@@ -403,7 +550,7 @@
                 <td valign="top" *ngIf="
                     data.message?.acknowledgement &&
                     data.message?.acknowledgementImage
-                  " width="60">
+                  " width="60" style="padding-right: 9px">
                   <img class="indigenous-image" width="50" height="28" style="width: 50px; height: 28px"
                     [src]="'assets/logos/indigenous.jpg' | absoluteUrl" alt="Indigenous Logo" />
                 </td>
@@ -414,6 +561,10 @@
                   Treaties. We are situated on the Traditional Territory of the
                   Mississaugas, a branch of the greater Anishinaabeg Nation
                   which includes Algonquin, Ojibway, Odawa and Pottawatomi.
+                  <a href="https://indigenous.ontariotechu.ca/land-acknowledgement.php"
+                    style="color: #0077ca; text-decoration: none;">
+                    Learn more
+                  </a>
                 </td>
               </tr>
             </tbody>
