@@ -39,6 +39,13 @@ export interface FormControlOption {
    * @memberof FormControlOption
    */
   href?: string;
+  /**
+   * Optional: tagline text to display under the logo.
+   *
+   * @type {string}
+   * @memberof FormControlOption
+   */
+  tagline?: string;
 }
 
 export interface FormControlOptGroup {

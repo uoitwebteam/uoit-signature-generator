@@ -10,7 +10,7 @@
       </a>
       <br />
     </span>
-    <span *ngIf="data.name?.pronouns">Pronouns: <a
+    <span *ngIf="data.name?.pronouns">Pronouns: <a style="color: #0077ca; text-decoration: none"
         href="https://studentlife.ontariotechu.ca/services/equity-and-inclusion/equity-resources/pronouns.php">
         {{ data.name.pronouns }}</a>
       <br />
@@ -58,12 +58,32 @@
   <table border="0" cellpadding="0" cellspacing="0" style="padding: 3px; margin-bottom: 8px">
     <tr>
       <td>
-        <a style="border: 0; outline: none" title="Visit the {{ data.logo?.name }} website" [href]="data.logo?.href">
+        <a *ngIf="data.logo?.href" style="border: 0; outline: none" title="Visit the {{ data.logo?.name }} website"
+          [href]="data.logo.href">
           <img style="border: 0" [src]="data.logo?.src | absoluteUrl" alt="{{ data.logo?.name }} logo"
             absoluteDimensions="80%" />
         </a>
+        <img *ngIf="!data.logo?.href" style="border: 0" [src]="data.logo?.src | absoluteUrl"
+          alt="{{ data.logo?.name }} logo" absoluteDimensions="80%" />
       </td>
     </tr>
+  </table>
+
+  <!-- logo tagline -->
+  <table width="560" cellpadding="0" cellspacing="0" *ngIf="data.logo?.tagline"
+    style="padding: 3px; margin-bottom: 16px">
+    <tbody>
+      <tr>
+        <td valign="middle" style="
+                font-size: 14px;
+                font-style: italic;
+                color: #0077CA;
+                font-family: Arial, Helvetica, sans-serif;
+              ">
+          <strong style="padding-left: 3px">{{ data.logo.tagline }}</strong>
+        </td>
+      </tr>
+    </tbody>
   </table>
 
   <!-- university feature promo: #1 reputation -->
@@ -436,7 +456,7 @@
   </table>
 
   <table width="560" cellpadding="0" cellspacing="0"
-    *ngIf="data.event.use && data.event.data?.icon.name != '20th anniversary'" style="padding: 0">
+    *ngIf="data.event.use && data.event.data?.icon.name != '20th anniversary'" style="padding: 0; margin-bottom: 1rem;">
     <tbody>
       <tr style="display:flex; flex-direction:column">
         <td valign="middle">
@@ -551,11 +571,11 @@
                     data.message?.acknowledgement &&
                     data.message?.acknowledgementImage
                   " width="60" style="padding-right: 9px">
-                  <img class="indigenous-image" width="50" height="28" style="width: 50px; height: 28px"
-                    [src]="'assets/logos/indigenous.jpg' | absoluteUrl" alt="Indigenous Logo" />
+                  <img class="indigenous-image" [src]="'assets/logos/indigenous-transparent.png' | absoluteUrl"
+                    alt="Indigenous Logo" style="width: 50px" />
                 </td>
 
-                <td valign="top" *ngIf="data.message?.acknowledgement">
+                <td valign="top" *ngIf="data.message?.acknowledgement" style="font-size:11px;">
                   We acknowledge the lands and people of the Mississaugas of
                   Scugog Island First Nation which is covered under the Williams
                   Treaties. We are situated on the Traditional Territory of the
