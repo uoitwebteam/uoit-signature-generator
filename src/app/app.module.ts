@@ -17,7 +17,7 @@ import { CoreModule } from './core/core.module';
     SignatureFormModule,
     SignaturePreviewModule,
     RouterModule.forRoot([]),
-    CoreModule.forRoot({ url: 'https://api.ontariotechu.ca/v2/directory' }),
+    CoreModule.forRoot({ url: 'https://api.ontariotechu.ca/directory' }),
     SharedModule
   ],
   declarations: [AppComponent],

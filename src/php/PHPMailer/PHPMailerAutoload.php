@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPMailer SPL autoloader.
  * PHP Version 5
@@ -24,26 +25,24 @@
 function PHPMailerAutoload($classname)
 {
     //Can't use __DIR__ as it's only in PHP 5.3+
-    $filename = dirname(__FILE__).DIRECTORY_SEPARATOR.'class.'.strtolower($classname).'.php';
+    $filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'class.' . strtolower($classname) . '.php';
     if (is_readable($filename)) {
         require $filename;
     }
 }
 
+// Use SPL autoloading (available since PHP 5.1.2)
+// Note: __autoload() is deprecated in PHP 7.2+ and removed in PHP 8.0+
 if (version_compare(PHP_VERSION, '5.1.2', '>=')) {
-    //SPL autoloading was introduced in PHP 5.1.2
     if (version_compare(PHP_VERSION, '5.3.0', '>=')) {
         spl_autoload_register('PHPMailerAutoload', true, true);
     } else {
         spl_autoload_register('PHPMailerAutoload');
     }
 } else {
-    /**
-     * Fall back to traditional autoload for old PHP versions
-     * @param string $classname The name of the class to load
-     */
-    function __autoload($classname)
-    {
-        PHPMailerAutoload($classname);
+    // For very old PHP versions (< 5.1.2), try to use spl_autoload_register if available
+    if (function_exists('spl_autoload_register')) {
+        spl_autoload_register('PHPMailerAutoload');
     }
+    // For PHP < 5.1.2 without SPL, classes must be manually required
 }

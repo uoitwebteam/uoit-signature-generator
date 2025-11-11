@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve --hmr --configuration hmr --proxy-config proxy.conf.json",
     "build": "ng build --base-href /uoit-signature-generator/dist/",
-    "prod": "ng build --prod --build-optimizer --base-href /apps/signature-generator/",
+    "prod": "ng build --prod --build-optimizer --base-href /apps/signature-generator-test/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

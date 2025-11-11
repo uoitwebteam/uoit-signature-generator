@@ -53,16 +53,20 @@ export class DirectoryService {
 
   get<T>(endpoint = '') {
     return this.http
-      .get<ApiResponse<T>>(`${this.config.url}${endpoint}`, {
-        headers: new HttpHeaders({ Accept: 'application/json', 'X-XSRF-TOKEN': [null] })
+      .get<any>(`${this.config.url}${endpoint}`, {
+        headers: new HttpHeaders({ Accept: 'application/json' })
       })
       .pipe(
         map(res => {
-          if (res.success) {
+          // Handle the actual API response format: { metadata: {...}, data: [...] }
+          if (res.data) {
             return res.data;
-          } else {
-            throw new Error(<any>res.data);
           }
+          // Fallback for old format: { success: boolean, data: T }
+          if (res.success && res.data) {
+            return res.data;
+          }
+          throw new Error('Invalid API response format');
         }),
         catchError(handleError)
       );
@@ -77,7 +81,7 @@ export class DirectoryService {
   getDepartments() {
     return this.departmentsCache
       ? of(this.departmentsCache)
-      : this.get<string[]>('/departments').pipe(tap(data => (this.departmentsCache = data)));
+      : this.get<string[]>('/list/department').pipe(tap(data => (this.departmentsCache = data)));
   }
 
   getTitles() {
